@@ -18,6 +18,7 @@ namespace ProjectEulerConsole
                 if (Console.ReadLine() == "y")
                 {
                     anotherTest = true;
+                    Console.WriteLine();
                 }
             }
             while (anotherTest);
@@ -38,12 +39,28 @@ namespace ProjectEulerConsole
             switch (response)
             {
                 case 1:
-                    Console.Write("enter number lof natural numbers to go through: ");
+                    Console.Write("enter number of natural numbers to go through: ");
                     int maxNum;
                     if (int.TryParse(Console.ReadLine(), out maxNum))
                     {
                         double result = Exercises.ExerciseOne(maxNum);
                         Console.WriteLine("sum of multiples of 3's & 5's = " + result);
+                    }
+                    break;
+                case 2:
+                    Console.Write("enter highest fibonacci number: ");
+                    if(int.TryParse(Console.ReadLine(), out maxNum))
+                    {
+                        double result = Exercises.ExerciseTwo(maxNum);
+                        Console.WriteLine("sum of even fibonacci numbers = " + result);
+                    }
+                    break;
+                case 3:
+                    Console.Write("enter number to find largest prime factor of: ");
+                    if(int.TryParse(Console.ReadLine(), out maxNum))
+                    {
+                        double result = Exercises.ExerciseThree(maxNum);
+                        Console.WriteLine("largest prime factor of " + maxNum + " = " + result);
                     }
                     break;
             }
