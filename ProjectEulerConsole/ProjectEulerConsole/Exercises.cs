@@ -69,33 +69,29 @@ namespace ProjectEulerConsole
         /// <returns></returns>
         public static double ExerciseThree(double maxNum)
         {
-            List<double> primeList = new List<double>();
-            double highestPrime = 0;
-            primeList.Add(2);
-            for (double i = 3; i < maxNum; i++)
+            double square = Math.Sqrt(maxNum);
+            List<double> primelist = new List<double>();
+            for (double i = 3; i < square; i++)
             {
-                bool isPrime = true;
-                foreach(double prime in primeList)
+                if(i % 2 == 0) { continue; }
+                if(maxNum % i == 0)
                 {
-                    if(i % prime == 0)
+                    bool isPrime = true;
+                    foreach (double prime in primelist)
                     {
-                        isPrime = false;
-                        break;
+                        if(i % prime == 0)
+                        {
+                            isPrime = false;
+                            break;
+                        }
+                    }
+                    if(isPrime)
+                    {
+                        primelist.Add(i);
                     }
                 }
-                if(isPrime)
-                {
-                    primeList.Add(i);
-                }
             }
-            foreach(double prime in primeList)
-            {
-                if(maxNum % prime == 0)
-                {
-                    highestPrime = prime;
-                }
-            }
-            return highestPrime;
+            return primelist.Last();
         }
 
         /// <summary>
