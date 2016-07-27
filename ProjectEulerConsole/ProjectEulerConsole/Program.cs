@@ -57,10 +57,19 @@ namespace ProjectEulerConsole
                     break;
                 case 3:
                     Console.Write("enter number to find largest prime factor of: ");
-                    if(int.TryParse(Console.ReadLine(), out maxNum))
+                    double maxNumDouble;
+                    if(double.TryParse(Console.ReadLine(), out maxNumDouble))
                     {
-                        double result = Exercises.ExerciseThree(maxNum);
-                        Console.WriteLine("largest prime factor of " + maxNum + " = " + result);
+                        double result = Exercises.ExerciseThree(maxNumDouble);
+                        Console.WriteLine("largest prime factor of " + maxNumDouble + " = " + result);
+                    }
+                    break;
+                case 4:
+                    Console.Write("enter number of digits to find largest palendrome ie 3 digits: ");
+                    if (int.TryParse(Console.ReadLine(), out maxNum))
+                    {
+                        double result = Exercises.ExerciseFour(maxNum);
+                        Console.WriteLine("largest palendrome with  " + maxNum + " digits = " + result);
                     }
                     break;
             }

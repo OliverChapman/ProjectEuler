@@ -67,12 +67,12 @@ namespace ProjectEulerConsole
         /// </summary>
         /// <param name="maxNum"></param>
         /// <returns></returns>
-        public static double ExerciseThree(int maxNum)
+        public static double ExerciseThree(double maxNum)
         {
             List<double> primeList = new List<double>();
             double highestPrime = 0;
             primeList.Add(2);
-            for (int i = 3; i < maxNum; i++)
+            for (double i = 3; i < maxNum; i++)
             {
                 bool isPrime = true;
                 foreach(double prime in primeList)
@@ -96,6 +96,59 @@ namespace ProjectEulerConsole
                 }
             }
             return highestPrime;
+        }
+
+        /// <summary>
+        /// A palindromic number reads the same both ways. 
+        /// The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 × 99.
+        /// Find the largest palindrome made from the product of two 3-digit numbers.
+        /// </summary>
+        /// <param name="digitNum"></param>
+        /// <returns></returns>
+        public static double ExerciseFour(int digitNum)
+        {
+            string maxNumString = "1";
+            for (int i = 0; i < digitNum; i++)
+            {
+                maxNumString += "0";
+            }
+            //sets number of digits ie 1000 will be for 3 digits
+            int maxNumInt = int.Parse(maxNumString);
+            //to make looping more efficient so numbers won't be double checked
+            int startNum = 1;
+            double biggestPal = 0;
+            for (int i = 1; i < maxNumInt; i++)
+            {
+                for (int j = startNum; j < maxNumInt; j++)
+                {
+                    //check if palindrome
+                    int multiply = i * j;
+                    string multiplyString = multiply.ToString();
+                    char[] charArray = multiplyString.ToCharArray();
+                    int charNum = 0;                       
+                    charNum = charArray.Length -1;
+                    bool isPal = true;
+                    for (int k = 0; k < (charArray.Length/2); k++)
+                    {
+                        if(!(charArray[k] == charArray[charNum]))
+                        {
+                            isPal = false;
+                            break;
+                        }
+                        charNum--;
+                    }
+                    if (isPal == true)
+                    {
+                        if(biggestPal < multiply)
+                        {
+                            biggestPal = multiply;
+                        }
+                    }
+                    
+                }
+                startNum++;
+            }
+            return biggestPal;
         }
     }
 }
