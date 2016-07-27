@@ -10,9 +10,10 @@ namespace ProjectEulerConsole
     {
         static void Main(string[] args)
         {
-            bool anotherTest = false;
+            bool anotherTest;
             do
             {
+                anotherTest = false;
                 TestSelector();
                 Console.Write("would you like to run another test? (y): ");
                 if (Console.ReadLine() == "y")
