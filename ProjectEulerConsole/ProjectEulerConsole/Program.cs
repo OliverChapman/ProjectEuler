@@ -81,6 +81,22 @@ namespace ProjectEulerConsole
                         Console.WriteLine("smallest positive number that is evenly distributed between 1 - " + maxNum + " = " + result);
                     }
                     break;
+                case 6:
+                    Console.Write("max natural number: ");
+                    if (int.TryParse(Console.ReadLine(), out maxNum))
+                    {
+                        double result = Exercises.ExerciseSix(maxNum);
+                        Console.WriteLine("difference between the sum of the squares of the first" + maxNum + " natural numbers and the square of the sum = " + result);
+                    }
+                    break;
+                case 7:
+                    Console.Write("prime term: ");
+                    if (int.TryParse(Console.ReadLine(), out maxNum))
+                    {
+                        double result = Exercises.ExerciseSeven(maxNum);
+                        Console.WriteLine(maxNum + "th prime number = " + result);
+                    }
+                    break;
             }
         }
     }

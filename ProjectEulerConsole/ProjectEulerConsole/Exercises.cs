@@ -174,5 +174,54 @@ namespace ProjectEulerConsole
             }
             return 0;
         }
+
+        /// <summary>
+        /// The sum of the squares of the first ten natural numbers is,
+        /// 1^2 + 2^2 + ... + 10^2 = 385
+        /// The square of the sum of the first ten natural numbers is,
+        /// (1 + 2 + ... + 10)^2 = 55^2 = 3025
+        /// Hence the difference between the sum of the squares of the 
+        /// first ten natural numbers and the square of the sum is 3025 − 385 = 2640.
+        /// Find the difference between the sum of the squares of 
+        /// the first one hundred natural numbers and the square of the sum.
+        /// </summary>
+        /// <param name="maxNum"></param>
+        /// <returns></returns>
+        public static double ExerciseSix(int maxNum)
+        {
+            double sumSquare = 0;
+            double runningSum = 0;
+            for (int i = 1; i <= maxNum; i++)
+            {
+                sumSquare += Math.Pow(i, 2);
+                runningSum += i;                
+            }
+            return Math.Pow(runningSum, 2) - sumSquare;
+        }
+
+        public static double ExerciseSeven(int primeTerm)
+        {
+            List<double> primeList = new List<double>();
+            primeList.Add(2);
+            double i = 3;
+            while(primeList.Count < primeTerm)
+            {
+                bool isPrime = true;
+                foreach (double prime in primeList)
+                {
+                    if(i%prime == 0)
+                    {
+                        isPrime = false;
+                        break;
+                    }
+                }
+                if(isPrime)
+                {
+                    primeList.Add(i);
+                }
+                i++;
+            }
+            return primeList.Last();
+        }
     }
 }
