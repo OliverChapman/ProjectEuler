@@ -146,5 +146,33 @@ namespace ProjectEulerConsole
             }
             return biggestPal;
         }
+        /// <summary>
+        /// 2520 is the smallest number that can be divided by each of the 
+        /// numbers from 1 to 10 without any remainder.
+        /// What is the smallest positive number that is evenly divisible 
+        /// by all of the numbers from 1 to 20?
+        /// </summary>
+        /// <param name="maxNum"></param>
+        /// <returns></returns>
+        public static double ExerciseFive(int maxNum)
+        {
+            for (double i = maxNum; i > 0; i++)
+            {
+                bool evenDivide = true;
+                for (int j = 1; j <= maxNum; j++)
+                {
+                    if(!(i%j == 0))
+                    {
+                        evenDivide = false;
+                        break;
+                    }
+                }
+                if(evenDivide)
+                {
+                    return i;
+                }
+            }
+            return 0;
+        }
     }
 }

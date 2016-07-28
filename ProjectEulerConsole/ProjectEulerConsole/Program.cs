@@ -73,6 +73,14 @@ namespace ProjectEulerConsole
                         Console.WriteLine("largest palendrome with  " + maxNum + " digits = " + result);
                     }
                     break;
+                case 5:
+                    Console.Write("enter max number to divide by 1 - : ");
+                    if (int.TryParse(Console.ReadLine(), out maxNum))
+                    {
+                        double result = Exercises.ExerciseFive(maxNum);
+                        Console.WriteLine("smallest positive number that is evenly distributed between 1 - " + maxNum + " = " + result);
+                    }
+                    break;
             }
         }
     }
