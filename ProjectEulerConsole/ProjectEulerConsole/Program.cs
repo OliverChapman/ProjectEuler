@@ -97,6 +97,22 @@ namespace ProjectEulerConsole
                         Console.WriteLine(maxNum + "th prime number = " + result);
                     }
                     break;
+                case 8:
+                    Console.Write("number of adjacent digits to multiply: ");
+                    if (int.TryParse(Console.ReadLine(), out maxNum))
+                    {
+                        double result = Exercises.ExerciseEight(maxNum);
+                        Console.WriteLine(maxNum + "adjacent digits where the greatest product in 1000 digit number is = " + result);
+                    }
+                    break;
+                case 9:
+                    Console.Write("number to reach pythag triplet: ");
+                    if (int.TryParse(Console.ReadLine(), out maxNum))
+                    {
+                        double result = Exercises.ExerciseNine(maxNum);
+                        Console.WriteLine("product of abc = " + result);
+                    }
+                    break;
             }
         }
     }
